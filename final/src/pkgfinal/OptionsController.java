@@ -9,6 +9,9 @@ package pkgfinal;
  *
  * @author Laura
  */
-public class Model {
-    
+public class OptionsController {
+    OptionsController(OptionsModel o_model, OptionsView o_view)
+    {
+        
+    }
 }

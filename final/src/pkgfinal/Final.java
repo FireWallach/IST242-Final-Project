@@ -16,7 +16,9 @@ public class Final {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        MainView view = new MainView();
+        Model model = new Model();
+        View view = new View(model);
+        Controller controller = new Controller(model, view);
         view.setVisible(true);
     }
     

@@ -9,6 +9,6 @@ package pkgfinal;
  *
  * @author Laura
  */
-public class Model {
+public class OptionsModel {
     
 }

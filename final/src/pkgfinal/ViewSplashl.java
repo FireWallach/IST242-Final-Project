@@ -14,13 +14,13 @@ import javax.swing.JPanel;
  *
  * @author sak5657
  */
-public class ViewSplash extends JPanel{
+public class ViewSplashl extends JPanel{
     JButton splashButton;
     JLabel  optionsLabel;
     
-    ViewSplash(){
+    ViewSplashl(){
         
-        splashButton = new JButton(new ImageIcon(" "));
+        splashButton = new JButton(new ImageIcon("src/images/war_title.png"));
         add(splashButton);
     
         optionsLabel = new JLabel("None");

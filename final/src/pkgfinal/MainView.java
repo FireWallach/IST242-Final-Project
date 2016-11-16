@@ -5,6 +5,7 @@
  */
 package pkgfinal;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -12,10 +13,11 @@ import javax.swing.JPanel;
  *
  * @author Laura
  */
-public class MainView extends JFrame{
-    MainView(){
-        super("WAR");
-        this.setSize(700, 400);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+public class MainView extends JPanel{
+    MainView()
+    {
+        JButton welcomeButton = new JButton("Welcome to the Main View!");
+        add(welcomeButton);
     }
 }
+

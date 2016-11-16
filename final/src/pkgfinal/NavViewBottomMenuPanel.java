@@ -12,12 +12,12 @@ import javax.swing.JPanel;
  *
  * @author daw5510
  */
-public class ButtonPanel extends JPanel{
+public class NavViewBottomMenuPanel extends JPanel{
     JButton mainButton;
     JButton optionsButton;
     JButton instructionsButton;
     JButton creditsButton;  
-    public ButtonPanel() {
+    public NavViewBottomMenuPanel() {
         super();       
         mainButton = new JButton("Main");
         optionsButton = new JButton("Options");
