@@ -29,6 +29,5 @@ public class Deck {
         cardList.add(new Card("Jack of Spades", 11, "Spades"));
         cardList.add(new Card("Queen of Spades", 12, "Spades"));
         cardList.add(new Card("King of Spades", 13, "Spades"));
-        cardList.add(new Card("King of Spades", 13, "Spades"));
     }
 }
