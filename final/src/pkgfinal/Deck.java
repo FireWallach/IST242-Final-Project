@@ -30,4 +30,7 @@ public class Deck {
         cardList.add(new Card("Queen of Spades", 12, "Spades"));
         cardList.add(new Card("King of Spades", 13, "Spades"));
     }
+    public Card getTopCard(){
+        return cardList.get(0);
+    }
 }

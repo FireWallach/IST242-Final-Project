@@ -17,4 +17,8 @@ public class Board {
         this.deck1 = deck1;
         this.deck2 = deck2;
     }
+    
+    public Deck getDeck1(){
+        return deck1;
+    }
 }
