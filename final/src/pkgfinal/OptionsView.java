@@ -22,12 +22,12 @@ import javax.swing.JTextField;
  * @author jrimland-air
  */
 public class OptionsView extends JPanel{
-        JButton retButton;
-        JTextField playerName;
-        JLabel setBackground;
-        JSlider difficulty;
-        JButton blueButton;
-        JButton greenButton;
+        private JButton retButton;
+        private JTextField playerName;
+        private JLabel chooseBackground;
+        
+        private JButton blueButton;
+        private JButton greenButton;
         
         OptionsModel o_model;
         
@@ -37,9 +37,9 @@ public class OptionsView extends JPanel{
                    
             
             playerName = new JTextField("--Enter Player Name--");
-            setBackground = new JLabel("Choose background color");
+            chooseBackground = new JLabel("Choose background color");
             blueButton = new JButton("Blue"); 
-
+            greenButton = new JButton("Green");
             
 
             // It may be useful to have a Save & Return button
@@ -47,10 +47,66 @@ public class OptionsView extends JPanel{
             //retButton = new JButton("Save and Return");
 
             add(playerName);
-            add(setBackground);
+            add(chooseBackground);
             add(blueButton);
-
+            add(greenButton);
             //add(retButton);               
         }
+
+    /**
+     * @return the retButton
+     */
+    public JButton getRetButton() {
+        return retButton;
+    }
+
+    /**
+     * @param retButton the retButton to set
+     */
+    public void setRetButton(JButton retButton) {
+        this.retButton = retButton;
+    }
+
+    /**
+     * @return the playerName
+     */
+    public JTextField getPlayerName() {
+        return playerName;
+    }
+
+    /**
+     * @param playerName the playerName to set
+     */
+    public void setPlayerName(JTextField playerName) {
+        this.playerName = playerName;
+    }
+
+    /**
+     * @return the blueButton
+     */
+    public JButton getBlueButton() {
+        return blueButton;
+    }
+
+    /**
+     * @param blueButton the blueButton to set
+     */
+    public void setBlueButton(JButton blueButton) {
+        this.blueButton = blueButton;
+    }
+
+    /**
+     * @return the greenButton
+     */
+    public JButton getGreenButton() {
+        return greenButton;
+    }
+
+    /**
+     * @param greenButton the greenButton to set
+     */
+    public void setGreenButton(JButton greenButton) {
+        this.greenButton = greenButton;
+    }
 }
 
