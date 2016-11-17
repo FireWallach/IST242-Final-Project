@@ -19,6 +19,7 @@ package pkgfinal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
 
 public class Controller {
@@ -32,7 +33,9 @@ public class Controller {
     OptionsController o_Controller;  
            
     // TODO: Create instances of your MainModel and MainController once you implement them
+    MainModel m_model;
     MainView m_view;
+    MainController m_controller;
     
     public Controller(Model model, View view ) {
         this.model = model;
@@ -42,17 +45,20 @@ public class Controller {
         o_view = new OptionsView(o_model);
         o_Controller = new OptionsController(o_model, o_view); 
         
-        m_view = new MainView();
+        m_model = new MainModel();
+        m_view = new MainView(m_model);
+        m_controller = new MainController(m_view, m_model);
                 
         view.addOptionsButtonListener(new OptionsButtonListener());
         view.addMainButtonListener(new MainButtonListener());        
         
     }
     class OptionsButtonListener implements ActionListener {            
+        @Override
         public void actionPerformed(ActionEvent e)
         {            
             //Pass an Options View object to our Navigation View
-            view.switchToOptionsPanel(o_view);
+                view.switchToOptionsPanel(o_view);        
         }
     }     
  
@@ -60,7 +66,7 @@ public class Controller {
         public void actionPerformed(ActionEvent e)
         {            
             //Pass a Main View object to our Navigation View
-            //view.switchToMainPanel(m_view);
+            view.switchToMainPanel(m_view);
         }
     }         
     

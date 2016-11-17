@@ -31,7 +31,7 @@ public class View extends JFrame{
         nVpanel.addOptions(o_view);        
     }
     
-    public void switchToMainPanel(View m_view)
+    public void switchToMainPanel(MainView m_view)
     {
         nVpanel.removeSplash();
         nVpanel.removeOptions();

@@ -23,7 +23,7 @@ public class NavViewPanel extends JPanel{
     ViewSplashl splash;
     
     OptionsView o_view;
-    View m_view;
+    MainView m_view;
     
     public NavViewPanel() {
         super();
@@ -46,7 +46,7 @@ public class NavViewPanel extends JPanel{
         repaint();
     }
 
-    public void addMain(View m_view)
+    public void addMain(MainView m_view)
     {
         this.m_view = m_view;  //maintain handle to this view so we can remove it
         add(m_view, BorderLayout.CENTER);
