@@ -23,7 +23,7 @@ public class ViewSplashl extends JPanel{
         splashButton = new JButton(new ImageIcon("src/images/war_title.png"));
         add(splashButton);
     
-        optionsLabel = new JLabel("None");
+        optionsLabel = new JLabel("WAR by Group 10");
         add(optionsLabel);
   }
 }
