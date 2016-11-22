@@ -10,11 +10,9 @@ package pkgfinal;
  * @author Laura
  */
 
-import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSlider;
 import javax.swing.JTextField;
 
 /**
@@ -22,12 +20,10 @@ import javax.swing.JTextField;
  * @author jrimland-air
  */
 public class OptionsView extends JPanel{
-        private JButton retButton;
-        private JTextField playerName;
-        private JLabel chooseBackground;
-        
-        private JButton blueButton;
-        private JButton greenButton;
+        private JTextField playerName1;
+        private JTextField playerName2;
+        private JButton nextturnButton;
+        private JButton quitButton;
         
         OptionsModel o_model;
         
@@ -36,77 +32,71 @@ public class OptionsView extends JPanel{
             this.o_model = o_model;
                    
             
-            playerName = new JTextField("--Enter Player Name--");
-            chooseBackground = new JLabel("Choose background color");
-            blueButton = new JButton("Blue"); 
-            greenButton = new JButton("Green");
+            playerName1 = new JTextField("--Enter Player Name--");
+            playerName2 = new JTextField("--Enter Player Name--");
+            
+            nextturnButton = new JButton("Next"); 
+            quitButton = new JButton("Quit");
             
 
             // It may be useful to have a Save & Return button
             
             //retButton = new JButton("Save and Return");
 
-            add(playerName);
-            add(chooseBackground);
-            add(blueButton);
-            add(greenButton);
+            add(playerName1);
+            add(playerName2);
+            add(nextturnButton);
+            add(quitButton);
             //add(retButton);               
         }
 
     /**
-     * @return the retButton
-     */
-    public JButton getRetButton() {
-        return retButton;
-    }
-
-    /**
-     * @param retButton the retButton to set
-     */
-    public void setRetButton(JButton retButton) {
-        this.retButton = retButton;
-    }
-
-    /**
      * @return the playerName
      */
-    public JTextField getPlayerName() {
-        return playerName;
+    public JTextField getPlayerName1() {
+        return playerName1;
     }
 
     /**
      * @param playerName the playerName to set
      */
-    public void setPlayerName(JTextField playerName) {
-        this.playerName = playerName;
+    public void setPlayerName1(JTextField playerName1) {
+        this.playerName1 = playerName1;
     }
 
+    public JTextField getPlayerName2() {
+        return playerName2;
+    }
+    
+    public void setPlayerName2(JTextField playerName2) {
+        this.playerName2 = playerName2;
+    }
     /**
      * @return the blueButton
      */
-    public JButton getBlueButton() {
-        return blueButton;
+    public JButton getnextturnButton() {
+        return nextturnButton;
     }
 
     /**
      * @param blueButton the blueButton to set
      */
-    public void setBlueButton(JButton blueButton) {
-        this.blueButton = blueButton;
+    public void setBlueButton(JButton setnextturnButton) {
+        this.nextturnButton = nextturnButton;
     }
 
     /**
      * @return the greenButton
      */
-    public JButton getGreenButton() {
-        return greenButton;
+    public JButton getquitButton() {
+        return quitButton;
     }
 
     /**
      * @param greenButton the greenButton to set
      */
-    public void setGreenButton(JButton greenButton) {
-        this.greenButton = greenButton;
+    public void setquitButton(JButton quitButton) {
+        this.quitButton = quitButton;
     }
 }
 

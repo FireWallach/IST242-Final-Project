@@ -25,6 +25,7 @@ public class MainView extends JPanel{
         JLabel MenuLabel;
         
         MainModel m_model;
+        OptionsModel o_model;
         
         MainView(MainModel m_model)
         {
