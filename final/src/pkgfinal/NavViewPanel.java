@@ -24,6 +24,7 @@ public class NavViewPanel extends JPanel{
     
     OptionsView o_view;
     MainView m_view;
+    InstructionsView i_view;
     
     public NavViewPanel() {
         super();
@@ -72,8 +73,8 @@ public class NavViewPanel extends JPanel{
     {
         if (this.m_view != null)
             remove(this.m_view);
-    }    
-    
+    }   
+
     public void removeSplash()
     {
         remove(splash);

@@ -5,16 +5,14 @@
  */
 package pkgfinal;
 
-import java.awt.Color;
-
 /**
  *
  * @author Laura
  */
-public class OptionsModel {
-    
+public class InstructionsController {
+    private InstructionsModel i_model;
+    private InstructionsView i_view;
+    InstructionsController(InstructionsModel i_model, InstructionsView i_view){
         
-    
-
-  
+    }
 }

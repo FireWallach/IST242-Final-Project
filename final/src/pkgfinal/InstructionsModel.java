@@ -5,16 +5,10 @@
  */
 package pkgfinal;
 
-import java.awt.Color;
-
 /**
  *
  * @author Laura
  */
-public class OptionsModel {
+public class InstructionsModel {
     
-        
-    
-
-  
 }

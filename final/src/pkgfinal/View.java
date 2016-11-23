@@ -16,9 +16,10 @@ import javax.swing.JPanel;
 public class View extends JFrame{
     Model model;
     NavViewPanel nVpanel;
+    
     View(Model model){
         super("WAR");
-        this.setSize(700, 400);
+        this.setSize(700, 700);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         nVpanel = new NavViewPanel();
         

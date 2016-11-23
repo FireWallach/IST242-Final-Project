@@ -37,6 +37,10 @@ public class Controller {
     MainView m_view;
     MainController m_controller;
     
+    InstructionsModel i_model;
+    InstructionsView i_view;
+    InstructionsController i_controller;
+    
     public Controller(Model model, View view ) {
         this.model = model;
         this.view = view;
@@ -48,11 +52,16 @@ public class Controller {
         m_model = new MainModel();
         m_view = new MainView(m_model);
         m_controller = new MainController(m_view, m_model);
+        
+        i_model = new InstructionsModel();
+        i_view = new InstructionsView(i_model);
+        i_controller = new InstructionsController(i_model, i_view);
                 
         view.addOptionsButtonListener(new OptionsButtonListener());
         view.addMainButtonListener(new MainButtonListener());        
         
     }
+    
     class OptionsButtonListener implements ActionListener {            
         @Override
         public void actionPerformed(ActionEvent e)
@@ -62,7 +71,8 @@ public class Controller {
         }
     }     
  
-    class MainButtonListener implements ActionListener {            
+    class MainButtonListener implements ActionListener {  
+        @Override
         public void actionPerformed(ActionEvent e)
         {            
             //Pass a Main View object to our Navigation View
@@ -70,6 +80,8 @@ public class Controller {
         }
     }         
     
+    
+   
     //TODO: Add listeners on buttons to switch to other Panels
     
 }

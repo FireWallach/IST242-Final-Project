@@ -9,12 +9,13 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 /**
  *
  * @author Laura
  */
-public class OptionsController {
+public class OptionsController{
     private OptionsModel o_model;
     private OptionsView o_view;
     
@@ -26,8 +27,11 @@ public class OptionsController {
         class ButtonListener implements ActionListener{
             public void actionPerformed(ActionEvent e)
             {
+                JButton clickSource = (JButton)e.getSource();
                 
             }
+
+            
         }
     }
 }

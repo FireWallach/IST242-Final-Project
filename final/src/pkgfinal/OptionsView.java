@@ -22,10 +22,10 @@ import javax.swing.JTextField;
 public class OptionsView extends JPanel{
         private JTextField playerName1;
         private JTextField playerName2;
-        private JButton nextturnButton;
+        
         private JButton quitButton;
         
-        OptionsModel o_model;
+        private OptionsModel o_model;
         
         OptionsView(OptionsModel o_model)
         {
@@ -35,9 +35,6 @@ public class OptionsView extends JPanel{
             playerName1 = new JTextField("--Enter Player Name--");
             playerName2 = new JTextField("--Enter Player Name--");
             
-            nextturnButton = new JButton("Next"); 
-            quitButton = new JButton("Quit");
-            
 
             // It may be useful to have a Save & Return button
             
@@ -45,8 +42,8 @@ public class OptionsView extends JPanel{
 
             add(playerName1);
             add(playerName2);
-            add(nextturnButton);
-            add(quitButton);
+            
+            
             //add(retButton);               
         }
 
@@ -71,32 +68,9 @@ public class OptionsView extends JPanel{
     public void setPlayerName2(JTextField playerName2) {
         this.playerName2 = playerName2;
     }
-    /**
-     * @return the blueButton
-     */
-    public JButton getnextturnButton() {
-        return nextturnButton;
-    }
-
-    /**
-     * @param blueButton the blueButton to set
-     */
-    public void setBlueButton(JButton setnextturnButton) {
-        this.nextturnButton = nextturnButton;
-    }
-
-    /**
-     * @return the greenButton
-     */
-    public JButton getquitButton() {
-        return quitButton;
-    }
-
-    /**
-     * @param greenButton the greenButton to set
-     */
-    public void setquitButton(JButton quitButton) {
-        this.quitButton = quitButton;
-    }
+    
+    
+    
+    
 }
 

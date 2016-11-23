@@ -5,16 +5,16 @@
  */
 package pkgfinal;
 
-import java.awt.Color;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Laura
  */
-public class OptionsModel {
-    
-        
-    
-
-  
+public class InstructionsView extends JPanel{
+    private InstructionsModel i_model;
+    InstructionsView(InstructionsModel i_model){
+        this.i_model = i_model;
+    }
 }
+

@@ -22,27 +22,46 @@ import javax.swing.JTextField;
  * @author jrimland-air
  */
 public class MainView extends JPanel{        
-        JLabel MenuLabel;
+        private JLabel MenuLabel;
         
-        MainModel m_model;
-        OptionsModel o_model;
-        
+        private MainModel m_model;
+        private OptionsModel o_model;
+        private JButton nextturnButton;
+        private JButton quitButton;
         MainView(MainModel m_model)
         {
             this.m_model = m_model;
                    
             
             MenuLabel = new JLabel("Welcome to the Main Menu!");
-
-            
+            nextturnButton = new JButton("Next");
+            quitButton = new JButton("Quit");
 
             // It may be useful to have a Save & Return button
             
             //retButton = new JButton("Save and Return");
 
             add(MenuLabel);
-
+            add(nextturnButton);
+            add(quitButton);
             //add(retButton);               
         }
+        public JButton getNextTurnButton() {
+            return nextturnButton;
+        }
+
+    
+        public void setNextTurnButton(){
+            this.nextturnButton = nextturnButton;
+        }
+        public JButton getquitButton() {
+            return quitButton;
+        }
+
+    
+        public void setquitButton(JButton quitButton) {
+            this.quitButton = quitButton;
+        }
+
 }
 
