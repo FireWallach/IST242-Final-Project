@@ -19,7 +19,7 @@ public class View extends JFrame{
     
     View(Model model){
         super("WAR");
-        this.setSize(700, 700);
+        this.setSize(600, 600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         nVpanel = new NavViewPanel();
         

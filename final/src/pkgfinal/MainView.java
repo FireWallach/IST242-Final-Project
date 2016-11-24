@@ -22,46 +22,52 @@ import javax.swing.JTextField;
  * @author jrimland-air
  */
 public class MainView extends JPanel{        
-        private JLabel MenuLabel;
-        
-        private MainModel m_model;
-        private OptionsModel o_model;
-        private JButton nextturnButton;
-        private JButton quitButton;
-        MainView(MainModel m_model)
-        {
-            this.m_model = m_model;
-                   
-            
-            MenuLabel = new JLabel("Welcome to the Main Menu!");
-            nextturnButton = new JButton("Next");
-            quitButton = new JButton("Quit");
+    private JLabel MenuLabel;
+    private JButton retButton;
+    private MainModel m_model;
+    private OptionsModel o_model;
+    private OptionsView o_view;
+    private JButton nextTurnButton;
+    private JButton quitButton;
+    private JLabel optionsLabel;
+    MainView(MainModel m_model)
+    {
+        this.m_model = m_model;
 
-            // It may be useful to have a Save & Return button
-            
-            //retButton = new JButton("Save and Return");
 
-            add(MenuLabel);
-            add(nextturnButton);
-            add(quitButton);
-            //add(retButton);               
-        }
-        public JButton getNextTurnButton() {
-            return nextturnButton;
-        }
+        MenuLabel = new JLabel("Welcome to the Main Menu!");
+        nextTurnButton = new JButton("Next");
+        quitButton = new JButton("Quit");
+        optionsLabel = new JLabel("No options selected yet");
+        // It may be useful to have a Save & Return button
 
-    
-        public void setNextTurnButton(){
-            this.nextturnButton = nextturnButton;
-        }
-        public JButton getquitButton() {
-            return quitButton;
-        }
+        retButton = new JButton("Save and Return");
 
-    
-        public void setquitButton(JButton quitButton) {
-            this.quitButton = quitButton;
-        }
+        add(MenuLabel);
+        add(nextTurnButton);
+        add(quitButton);
+        add(optionsLabel);
+        add(retButton);               
+    }
+    public JButton getNextTurnButton() {
+        return nextTurnButton;
+    }
 
+
+    public void setNextTurnButton(){
+        this.nextTurnButton = nextTurnButton;
+    }
+    public JButton getQuitButton() {
+        return quitButton;
+    }
+
+
+    public void setQuitButton(JButton quitButton) {
+        this.quitButton = quitButton;
+    }
+
+    public void setOptionsLabel(String pName1, String pName2) {
+        optionsLabel.setText(o_model.getPlayerName1()+" "+o_model.getPlayerName2());
+    }
 }
 

@@ -11,4 +11,7 @@ package pkgfinal;
  */
 public class MainModel {
     
+    MainModel(){
+         
+    }
 }

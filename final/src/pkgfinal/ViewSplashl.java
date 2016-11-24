@@ -15,13 +15,13 @@ import javax.swing.JPanel;
  * @author sak5657
  */
 public class ViewSplashl extends JPanel{
-    JButton splashButton;
-    JLabel  optionsLabel;
+    private JLabel splashLabel;
+    private JLabel  optionsLabel;
     
     ViewSplashl(){
         
-        splashButton = new JButton(new ImageIcon("src/images/WarSplash.png"));
-        add(splashButton);
+        splashLabel = new JLabel(new ImageIcon("src/images/WarSplash.png"));
+        add(splashLabel);
     
         optionsLabel = new JLabel("WAR by Group 10");
         add(optionsLabel);
