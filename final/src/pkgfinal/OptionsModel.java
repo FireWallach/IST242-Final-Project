@@ -6,8 +6,6 @@
 package pkgfinal;
 
 import java.awt.Color;
-import javax.swing.JButton;
-import javax.swing.JTextField;
 
 /**
  *
@@ -16,6 +14,7 @@ import javax.swing.JTextField;
 public class OptionsModel {
     private String playerName1;
     private String playerName2;
+    private Color currColor;
 
     
     OptionsModel(){
@@ -37,6 +36,13 @@ public class OptionsModel {
 
     public void setPlayerName2(String playerName2) {
         this.playerName2 = playerName2;
+    }
+    
+    public void setColor(Color c){
+        currColor = c;
+    }
+    public Color getColor(){
+        return currColor;
     }
     
     

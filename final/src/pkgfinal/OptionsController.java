@@ -27,15 +27,19 @@ public class OptionsController{
         this.m_view = m_view;
         
         class ButtonListener implements ActionListener{
-            public void actionPerformed(ActionEvent e)
-            {
-                JButton clickSource = (JButton)e.getSource();
-                if(clickSource == o_view.getRetButton()){
-                    o_view.setNameField(o_model.getPlayerName1(), o_model.getPlayerName2());  
-                    o_view.setOptionsLabel(o_model.getPlayerName1(), o_model.getPlayerName2());
-                    
-                }
-            }
+            @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton source = (JButton)e.getSource();
+        
+        if((source == o_view.getBGColorButton()) ){ 
+            o_view.incrementIndex();
+        }
+        else if(source == o_view.getRetButton()){
+            o_model.setPlayerName1(o_view.getPlayerName1Text());
+            o_model.setPlayerName2(o_view.getPlayerName2Text());
+            o_model.setColor(o_view.getColor());
+        }
+    }
  
         }
         o_view.addButtonListener(new ButtonListener());
