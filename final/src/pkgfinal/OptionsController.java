@@ -38,6 +38,7 @@ public class OptionsController{
             o_model.setPlayerName1(o_view.getPlayerName1Text());
             o_model.setPlayerName2(o_view.getPlayerName2Text());
             o_model.setColor(o_view.getColor());
+            o_model.setChanged(true);
         }
     }
  

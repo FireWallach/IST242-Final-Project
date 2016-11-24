@@ -5,6 +5,7 @@
  */
 package pkgfinal;
 
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -59,6 +60,7 @@ public class View extends JFrame{
     {        
        nVpanel.menu.creditsButton.addActionListener(al);
     }
+    
     //TODO: Add listeners to switch to other Panels
     
 }

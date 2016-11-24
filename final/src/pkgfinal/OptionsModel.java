@@ -15,10 +15,11 @@ public class OptionsModel {
     private String playerName1;
     private String playerName2;
     private Color currColor;
+    private boolean hasChanged;
 
     
     OptionsModel(){
-    
+        hasChanged = false;
     }
     public String getPlayerName1() {
         return playerName1;
@@ -44,7 +45,12 @@ public class OptionsModel {
     public Color getColor(){
         return currColor;
     }
-    
+    public boolean getChanged(){
+        return hasChanged;
+    }
+    public void setChanged(boolean h){
+        hasChanged = h;
+    }
     
         
     

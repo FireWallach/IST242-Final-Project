@@ -38,12 +38,7 @@ public class OptionsView extends JPanel{
     {
         this.o_model = o_model;
         BGCLabel = new JLabel("Background Color:");
-        BGColorButton = new JButton("Default");
-        GridLayout grid = new GridLayout(10,10);
-        playerName1 = new JTextField("--Enter Player Name--");
-        playerName2 = new JTextField("--Enter Player Name--");
-        optionsLabel = new JLabel("No options Selected Yet");
-        index = 5;
+        index = 6;
         colors = new Color[6];
         colors[0] = Color.BLACK;
         colors[1] = Color.RED;
@@ -58,6 +53,11 @@ public class OptionsView extends JPanel{
         names[3] = "Blue";
         names[4] = "Green";
         names[5] = "Default";
+        BGColorButton = new JButton(names[index - 1]);
+        GridLayout grid = new GridLayout(10,10);
+        playerName1 = new JTextField("--Enter Player Name--");
+        playerName2 = new JTextField("--Enter Player Name--");
+        optionsLabel = new JLabel("No options Selected Yet");
         // It may be useful to have a Save & Return button
 
         retButton = new JButton("Save and Return");

@@ -52,7 +52,14 @@ public class MainView extends JPanel{
     public JButton getNextTurnButton() {
         return nextTurnButton;
     }
-
+    public void setOptions(boolean optionsSet, String p1, String p2, Color c){
+        if(optionsSet == true){
+            optionsLabel.setText("Player 1: " + p1 + " Player 2: " + p2 + " Background Color: " + c.toString());
+        }
+        else{
+            optionsLabel.setText("No options seceted yet");
+        }
+    }
 
     public void setNextTurnButton(){
         this.nextTurnButton = nextTurnButton;
