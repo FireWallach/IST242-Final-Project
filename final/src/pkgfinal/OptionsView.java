@@ -57,7 +57,6 @@ public class OptionsView extends JPanel{
         GridLayout grid = new GridLayout(10,10);
         playerName1 = new JTextField("--Enter Player Name--");
         playerName2 = new JTextField("--Enter Player Name--");
-        optionsLabel = new JLabel("No options Selected Yet");
         // It may be useful to have a Save & Return button
 
         retButton = new JButton("Save and Return");
@@ -66,7 +65,6 @@ public class OptionsView extends JPanel{
         add(playerName2);
         add(BGCLabel);
         add(BGColorButton);
-        add(optionsLabel);
         setLayout(grid);
         add(retButton);
     }

@@ -57,7 +57,7 @@ public class MainView extends JPanel{
             optionsLabel.setText("Player 1: " + p1 + " Player 2: " + p2 + " Background Color: " + c.toString());
         }
         else{
-            optionsLabel.setText("No options seceted yet");
+            optionsLabel.setText("No options selected yet");
         }
     }
 
