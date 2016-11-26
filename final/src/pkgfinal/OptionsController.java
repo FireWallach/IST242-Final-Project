@@ -19,28 +19,42 @@ public class OptionsController{
     private OptionsModel o_model;
     private OptionsView o_view;
     private MainView m_view;
+    private Color defaultColor;
+    
     
     OptionsController(OptionsModel o_model, OptionsView o_view, MainView m_view)
     {
         this.o_model = o_model;
         this.o_view = o_view;
         this.m_view = m_view;
+       
+        defaultColor = o_view.getBackground();
+        
         
         class ButtonListener implements ActionListener{
-            @Override
-    public void actionPerformed(ActionEvent e) {
-        JButton source = (JButton)e.getSource();
-        
-        if((source == o_view.getBGColorButton()) ){ 
-            o_view.incrementIndex();
-        }
-        else if(source == o_view.getRetButton()){
-            o_model.setPlayerName1(o_view.getPlayerName1Text());
-            o_model.setPlayerName2(o_view.getPlayerName2Text());
-            o_model.setColor(o_view.getColor());
-            o_model.setChanged(true);
-        }
-    }
+            public void actionPerformed(ActionEvent e)
+            {
+                JButton clickSource = (JButton)e.getSource();
+                if(clickSource == o_view.getRedButton()){
+                    o_view.setBackground(Color.RED);
+
+                }
+                if(clickSource == o_view.getDefaultButton()){
+                    o_view.setBackground(defaultColor);  
+                }
+                if(clickSource == o_view.getBlueButton()){
+                    o_view.setBackground(Color.BLUE);
+                }
+                if(clickSource == o_view.getGreenButton()){
+                    o_view.setBackground(Color.GREEN);
+                }
+                if(clickSource == o_view.getRetButton()){
+                    o_view.setNameField(o_model.getPlayerName1(), o_model.getPlayerName2());  
+                    
+                    o_model.setChanged(true);
+                    
+                }
+            }
  
         }
         o_view.addButtonListener(new ButtonListener());

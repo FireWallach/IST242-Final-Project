@@ -9,12 +9,7 @@ package pkgfinal;
  *
  * @author Laura
  */
-/**
- *
- *  The Nav Controller handles logic to switch between Views
- * 
- * @author jrimland
- */
+
 
 
 import java.awt.Color;
@@ -77,7 +72,7 @@ public class Controller {
         public void actionPerformed(ActionEvent e)
         {            
             //Pass a Main View object to our Navigation View
-            m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_model.getColor());
+            m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground());
             view.switchToMainPanel(m_view);
             
         }

@@ -12,7 +12,6 @@ package pkgfinal;
 
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -26,52 +25,54 @@ import javax.swing.JTextField;
 public class OptionsView extends JPanel{
     private JTextField playerName1;
     private JTextField playerName2;
-    private JLabel BGCLabel;
-    private JButton BGColorButton;
-    int index;                                                                  //Controls Background Color Button's looping           
-    private Color[] colors;                                                             //Stores possible background colors
-    String[] names;
+    
+    private JButton quitButton;
+    private JButton redButton;
+    private JButton defaultButton;
+    private JButton greenButton;
+    private JButton blueButton;
+    private String background;
     private OptionsModel o_model;
     private JButton retButton;
     private JLabel optionsLabel;
     OptionsView(OptionsModel o_model)
     {
         this.o_model = o_model;
-        BGCLabel = new JLabel("Background Color:");
-        index = 6;
-        colors = new Color[6];
-        colors[0] = Color.BLACK;
-        colors[1] = Color.RED;
-        colors[2] = Color.YELLOW;
-        colors[3] = Color.BLUE;
-        colors[4] = Color.GREEN;
-        colors[5] = this.getBackground();
-        names = new String[6];
-        names[0] = "Black";
-        names[1] = "Red";
-        names[2] = "Yellow";
-        names[3] = "Blue";
-        names[4] = "Green";
-        names[5] = "Default";
-        BGColorButton = new JButton(names[index - 1]);
-        GridLayout grid = new GridLayout(10,10);
+        optionsLabel = new JLabel("Choose Background Color:");
+        add(optionsLabel);
+        GridLayout grid = new GridLayout(15,15);
         playerName1 = new JTextField("--Enter Player Name--");
         playerName2 = new JTextField("--Enter Player Name--");
+        
+        
+        defaultButton = new JButton("Default");
+        add(defaultButton);
+        redButton = new JButton("Red");
+        add(redButton);
+        greenButton = new JButton("Green");
+        add(greenButton);
+        blueButton = new JButton("Blue");
+        add(blueButton);
         // It may be useful to have a Save & Return button
 
         retButton = new JButton("Save and Return");
 
         add(playerName1);
         add(playerName2);
-        add(BGCLabel);
-        add(BGColorButton);
-        setLayout(grid);
+
+
         add(retButton);
+        
+        setLayout(grid);
     }
     
     public void addButtonListener(ActionListener al){
         retButton.addActionListener(al);
-        BGColorButton.addActionListener(al);
+        redButton.addActionListener(al);
+        getGreenButton().addActionListener(al);
+        getBlueButton().addActionListener(al);
+        defaultButton.addActionListener(al);
+        
     }
         
     public void setNameField(String pName1, String pName2) {
@@ -80,38 +81,57 @@ public class OptionsView extends JPanel{
         o_model.setPlayerName1(pName1);
         o_model.setPlayerName2(pName2);
     }
+    
+        
 
     public JButton getRetButton() {
         return retButton;
     }
-    public JButton getBGColorButton(){
-        return BGColorButton;
-    }
     public void setRetButton(JButton retButton) {
         this.retButton = retButton;
     }
-    public String getPlayerName1Text(){
-        return playerName1.getText();
-    }
-    public String getPlayerName2Text(){
-        return playerName2.getText();
-    }
-    public void incrementIndex(){
-        if(index == 6)
-                index = 0;
-            BGColorButton.setText(names[index]);
-            index++;
-    }
-    public Color getColor(){
-        return colors[index - 1];
-    }
+
     public JLabel getOptionsLabel() {
         return optionsLabel;
     }
     public void setOptionsLabel(String pName1, String pName2) {
         
-        optionsLabel.setText(o_model.getPlayerName1()+" "+o_model.getPlayerName2());
-    }  
+        optionsLabel.setText(o_model.getPlayerName1()+" "+o_model.getPlayerName2()+" ");
+    }
+
+    public JButton getRedButton() {
+        return redButton;
+    }
+
+    public void setRedButton(JButton redButton) {
+        this.redButton = redButton;
+    }
+
+    public JButton getDefaultButton() {
+        return defaultButton;
+    }
+
+    public void setDefaultButton(JButton defaultButton) {
+        this.defaultButton = defaultButton;
+    }
+
+    public JButton getGreenButton() {
+        return greenButton;
+    }
+
+    public void setGreenButton(JButton greenButton) {
+        this.greenButton = greenButton;
+    }
+
+    public JButton getBlueButton() {
+        return blueButton;
+    }
+
+    public void setBlueButton(JButton blueButton) {
+        this.blueButton = blueButton;
+    }
+
+    
     
     
     

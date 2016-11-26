@@ -10,8 +10,19 @@ package pkgfinal;
  * @author Dylan
  */
 public class MainModel {
+    private String background;
     
+   
     MainModel(){
          
     }
+    public void setBackgroundName(String background){
+        this.background = background;    
+    }
+    public String getBackgroundName(){
+        
+        return background;
+    }
+    
+    
 }

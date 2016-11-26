@@ -30,9 +30,11 @@ public class MainView extends JPanel{
     private JButton nextTurnButton;
     private JButton quitButton;
     private JLabel optionsLabel;
+    private Color defaultBackground;
     MainView(MainModel m_model)
     {
         this.m_model = m_model;
+        defaultBackground = getBackground();
 
 
         MenuLabel = new JLabel("Welcome to the Main Menu!");
@@ -54,7 +56,24 @@ public class MainView extends JPanel{
     }
     public void setOptions(boolean optionsSet, String p1, String p2, Color c){
         if(optionsSet == true){
-            optionsLabel.setText("Player 1: " + p1 + " Player 2: " + p2 + " Background Color: " + c.toString());
+            
+            
+            
+            setBackground(c);
+            if(c.equals(Color.RED)){
+                m_model.setBackgroundName("Red");
+            }
+            else if(c.equals(defaultBackground)){
+                m_model.setBackgroundName("Default");
+            }
+            else if(c.equals(Color.BLUE)){
+                m_model.setBackgroundName("Blue");
+            }
+            else if(c.equals(Color.GREEN)){
+                m_model.setBackgroundName("Green");
+            }
+            
+            optionsLabel.setText("Player 1: " + p1 + " Player 2: " + p2 + " Background Color: " +m_model.getBackgroundName());
         }
         else{
             optionsLabel.setText("No options selected yet");
