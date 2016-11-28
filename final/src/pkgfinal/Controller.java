@@ -35,6 +35,8 @@ public class Controller {
   
     InstructionsView i_view;
     
+    CreditsView c_view;
+    
     
     public Controller(Model model, View view ) {
         this.model = model;
@@ -51,10 +53,29 @@ public class Controller {
         
         i_view = new InstructionsView();
         
-                
+        c_view = new CreditsView();
+        
+        view.addCreditsButtonListener(new CreditsButtonListener());
+        view.addInstructionsButtonListener(new InstructionsButtonListener());
         view.addOptionsButtonListener(new OptionsButtonListener());
         view.addMainButtonListener(new MainButtonListener());        
         
+    }
+    
+    
+    class CreditsButtonListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            view.switchToCreditsPanel(c_view);
+        }
+    }
+    class InstructionsButtonListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            view.switchToInstructionsPanel(i_view);
+        }
     }
     
     class OptionsButtonListener implements ActionListener {            
@@ -71,7 +92,7 @@ public class Controller {
         public void actionPerformed(ActionEvent e)
         {            
             //Pass a Main View object to our Navigation View
-            m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames());
+             m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames());
             view.switchToMainPanel(m_view);
             
         }
@@ -83,3 +104,6 @@ public class Controller {
     
 }
 
+
+         
+    

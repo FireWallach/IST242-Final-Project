@@ -19,12 +19,13 @@ import javax.swing.JPanel;
  */
 public class NavViewPanel extends JPanel{
 
-    NavViewBottomMenuPanel menu;
-    ViewSplash splash;
+     private NavViewBottomMenuPanel menu;
+     private ViewSplash splash;
     
-    OptionsView o_view;
-    MainView m_view;
-    InstructionsView i_view;
+    private OptionsView o_view;
+    private MainView m_view;
+    private InstructionsView i_view;
+    private CreditsView c_view;
     
     public NavViewPanel() {
         super();
@@ -38,7 +39,13 @@ public class NavViewPanel extends JPanel{
     
     //Note: Splash scrren is only shown on startup.  No need to navigate back to it.
     
-    
+    public void addCredits(CreditsView c_view)
+    {
+        this.c_view = c_view;
+        add(c_view, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+    }
     public void addOptions(OptionsView o_view)
     {
         this.o_view = o_view; //maintain handle to this view so we can remove it
@@ -70,6 +77,12 @@ public class NavViewPanel extends JPanel{
         repaint();
     }
     
+    public void removeCredits()
+    {
+        if(this.c_view != null)
+            remove(this.c_view);
+    }
+    
     public void removeInstructions()
     {
         if(this.i_view != null)
@@ -91,6 +104,20 @@ public class NavViewPanel extends JPanel{
     public void removeSplash()
     {
         remove(splash);
+    }
+
+    /**
+     * @return the menu
+     */
+    public NavViewBottomMenuPanel getMenu() {
+        return menu;
+    }
+
+    /**
+     * @param menu the menu to set
+     */
+    public void setMenu(NavViewBottomMenuPanel menu) {
+        this.menu = menu;
     }
             
 }

@@ -15,9 +15,9 @@ import javax.swing.JPanel;
  * @author Laura
  */
 public class View extends JFrame{
-    private Model model;
-    private NavViewPanel nVpanel;
-   
+    Model model;
+    NavViewPanel nVpanel;
+    
     View(Model model){
         super("WAR");
         this.setSize(600, 600);
@@ -26,10 +26,31 @@ public class View extends JFrame{
         
         add(nVpanel); 
     }
+    public void switchToCreditsPanel(CreditsView c_view)
+    {
+        nVpanel.removeSplash();
+        nVpanel.removeInstructions();
+        nVpanel.removeOptions();
+        nVpanel.removeMain();
+        nVpanel.removeCredits();
+        nVpanel.addCredits(c_view);
+    }
+    public void switchToInstructionsPanel(InstructionsView i_view)
+    {
+        nVpanel.removeSplash();
+        nVpanel.removeInstructions();
+        nVpanel.removeOptions();
+        nVpanel.removeMain();
+        nVpanel.removeCredits();
+        nVpanel.addInstructions(i_view);
+    }
     public void switchToOptionsPanel(OptionsView o_view)
     {
         nVpanel.removeSplash();
         nVpanel.removeMain();
+        nVpanel.removeOptions();
+        nVpanel.removeCredits();
+        nVpanel.removeInstructions();
         nVpanel.addOptions(o_view);        
     }
     
@@ -37,31 +58,34 @@ public class View extends JFrame{
     {
         nVpanel.removeSplash();
         nVpanel.removeOptions();
+        nVpanel.removeInstructions();
+        nVpanel.removeMain();
+        nVpanel.removeCredits();
         nVpanel.addMain(m_view);        
     }
     
     
-    
     public void addOptionsButtonListener(ActionListener al) 
     {    
-        nVpanel.menu.getOptionsButton().addActionListener(al);
+        nVpanel.getMenu().getOptionsButton().addActionListener(al);
     }    
                     
     public void addMainButtonListener(ActionListener al) 
     {    
-        nVpanel.menu.getMainButton().addActionListener(al);
+        nVpanel.getMenu().getMainButton().addActionListener(al);
     }       
     
     public void addInstructionsButtonListener(ActionListener al)
     {
-       nVpanel.menu.getInstructionsButton().addActionListener(al);
+       nVpanel.getMenu().getInstructionsButton().addActionListener(al);
     }  
     
     public void addCreditsButtonListener(ActionListener al)
     {        
-       nVpanel.menu.getCreditsButton().addActionListener(al);
+       nVpanel.getMenu().getCreditsButton().addActionListener(al);
     }
     
     //TODO: Add listeners to switch to other Panels
+   
     
 }
