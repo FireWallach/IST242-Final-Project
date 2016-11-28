@@ -13,9 +13,12 @@ package pkgfinal;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JSlider;
 import javax.swing.JTextField;
 
 /**
@@ -35,14 +38,25 @@ public class OptionsView extends JPanel{
     private OptionsModel o_model;
     private JButton retButton;
     private JLabel optionsLabel;
+    private JLabel rButtonLabel;
+    private JRadioButton yesButton;
+    private JRadioButton noButton;
+    private ButtonGroup group;
     OptionsView(OptionsModel o_model)
     {
         this.o_model = o_model;
         optionsLabel = new JLabel("Choose Background Color:");
         add(optionsLabel);
-        GridLayout grid = new GridLayout(15,15);
+        GridLayout grid = new GridLayout(10,10);
         playerName1 = new JTextField("--Enter Player Name--");
         playerName2 = new JTextField("--Enter Player Name--");
+        yesButton = new JRadioButton("Yes");
+        noButton = new JRadioButton("No");
+        group = new ButtonGroup();
+        group.add(yesButton);
+        group.add(noButton);
+        rButtonLabel = new JLabel("Show player names?");
+        
         
         
         defaultButton = new JButton("Default");
@@ -59,7 +73,8 @@ public class OptionsView extends JPanel{
 
         add(playerName1);
         add(playerName2);
-
+        add(yesButton);
+        add(noButton);
 
         add(retButton);
         
@@ -83,7 +98,20 @@ public class OptionsView extends JPanel{
     }
     
         
-
+    public boolean getShowNames(){
+        if(noButton.isSelected()){
+            return false;
+        }
+        else
+            return true;             
+    }
+    public JRadioButton getYesButton(){
+        return yesButton;
+    }
+    public JRadioButton getNoButton(){
+        return noButton;
+    }
+    
     public JButton getRetButton() {
         return retButton;
     }

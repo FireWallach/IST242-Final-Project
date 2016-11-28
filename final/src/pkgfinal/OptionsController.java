@@ -50,9 +50,8 @@ public class OptionsController{
                 }
                 if(clickSource == o_view.getRetButton()){
                     o_view.setNameField(o_model.getPlayerName1(), o_model.getPlayerName2());  
-                    
                     o_model.setChanged(true);
-                    
+                    o_model.setDisplayNames(o_view.getShowNames());
                 }
             }
  

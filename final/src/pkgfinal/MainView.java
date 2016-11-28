@@ -54,9 +54,13 @@ public class MainView extends JPanel{
     public JButton getNextTurnButton() {
         return nextTurnButton;
     }
-    public void setOptions(boolean optionsSet, String p1, String p2, Color c){
+    public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b){
         if(optionsSet == true){
-            
+            String optionsString;
+            if(b == true)
+                optionsString = "Yes";
+            else
+                optionsString = "No";
             
             
             setBackground(c);
@@ -73,7 +77,7 @@ public class MainView extends JPanel{
                 m_model.setBackgroundName("Green");
             }
             
-            optionsLabel.setText("Player 1: " + p1 + " Player 2: " + p2 + " Background Color: " +m_model.getBackgroundName());
+            optionsLabel.setText("Player 1: " + p1 + " Player 2: " + p2 + " Background Color: " +m_model.getBackgroundName() + " Show player names? " + optionsString);
         }
         else{
             optionsLabel.setText("No options selected yet");

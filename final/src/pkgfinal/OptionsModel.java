@@ -17,6 +17,7 @@ public class OptionsModel {
     private String playerName1;
     private String playerName2;
     private String background;
+    private boolean displayNames;
     
     private boolean hasChanged;
     OptionsModel(){
@@ -26,7 +27,12 @@ public class OptionsModel {
         return playerName1;
     }
 
-    
+    public void setDisplayNames(boolean b){
+        this.displayNames = b;
+    }
+    public boolean getDisplayNames(){
+        return this.displayNames;
+    }
     public void setPlayerName1(String playerName1) {
         this.playerName1 = playerName1;
     }
