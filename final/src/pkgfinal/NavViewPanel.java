@@ -53,7 +53,15 @@ public class NavViewPanel extends JPanel{
         add(m_view, BorderLayout.CENTER);
         revalidate();
         repaint();
-    }    
+    } 
+    
+    public void addInstructions(InstructionsView i_view)
+    {        
+     this.i_view = i_view;
+     add(i_view,BorderLayout.CENTER);
+     revalidate();
+     repaint();
+    }
     
     public void addSplash(View n_view)
     {
@@ -62,6 +70,11 @@ public class NavViewPanel extends JPanel{
         repaint();
     }
     
+    public void removeInstructions()
+    {
+        if(this.i_view != null)
+            remove(this.i_view);
+    }
     
     public void removeOptions()
     {
