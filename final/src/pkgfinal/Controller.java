@@ -20,22 +20,22 @@ import javax.swing.JButton;
 
 public class Controller {
     
-    Model model;
-    View view;
+    private Model model;
+    private View view;
     
     //Instance Variables for Options Model, View, and Controller
-    OptionsModel o_model;
-    OptionsView o_view;
-    OptionsController o_Controller;  
+    private OptionsModel o_model;
+    private OptionsView o_view;
+    private OptionsController o_Controller;  
            
     // TODO: Create instances of your MainModel and MainController once you implement them
-    MainModel m_model;
-    MainView m_view;
-    MainController m_controller;
+    private MainModel m_model;
+    private MainView m_view;
+    private MainController m_controller;
   
-    InstructionsView i_view;
+    private InstructionsView i_view;
     
-    CreditsView c_view;
+    private CreditsView c_view;
     
     
     public Controller(Model model, View view ) {
@@ -68,6 +68,7 @@ public class Controller {
         public void actionPerformed(ActionEvent e)
         {
             view.switchToCreditsPanel(c_view);
+            c_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames());
         }
     }
     class InstructionsButtonListener implements ActionListener{
@@ -75,6 +76,7 @@ public class Controller {
         public void actionPerformed(ActionEvent e)
         {
             view.switchToInstructionsPanel(i_view);
+            i_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames());
         }
     }
     
@@ -92,7 +94,7 @@ public class Controller {
         public void actionPerformed(ActionEvent e)
         {            
             //Pass a Main View object to our Navigation View
-             m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames());
+            m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames());
             view.switchToMainPanel(m_view);
             
         }

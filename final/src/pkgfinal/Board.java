@@ -10,8 +10,8 @@ package pkgfinal;
  * @author daw5510
  */
 public class Board {
-    Deck deck1;
-    Deck deck2;
+    private Deck deck1;
+    private Deck deck2;
     
     Board(Deck deck1, Deck deck2){
         this.deck1 = deck1;

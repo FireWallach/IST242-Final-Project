@@ -19,8 +19,8 @@ import javax.swing.JPanel;
  */
 public class NavViewPanel extends JPanel{
 
-     private NavViewBottomMenuPanel menu;
-     private ViewSplash splash;
+    private NavViewBottomMenuPanel menu;
+    private ViewSplash splash;
     
     private OptionsView o_view;
     private MainView m_view;

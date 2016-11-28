@@ -48,8 +48,8 @@ public class OptionsView extends JPanel{
         optionsLabel = new JLabel("Choose Background Color:");
         add(optionsLabel);
         GridLayout grid = new GridLayout(11,11);
-        playerName1 = new JTextField("--Enter Player Name--");
-        playerName2 = new JTextField("--Enter Player Name--");
+        playerName1 = new JTextField("--Name--");
+        playerName2 = new JTextField("--Name--");
         yesButton = new JRadioButton("Yes");
         noButton = new JRadioButton("No");
         group = new ButtonGroup();

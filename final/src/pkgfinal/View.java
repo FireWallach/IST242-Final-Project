@@ -15,12 +15,12 @@ import javax.swing.JPanel;
  * @author Laura
  */
 public class View extends JFrame{
-    Model model;
-    NavViewPanel nVpanel;
+    private Model model;
+    private NavViewPanel nVpanel;
     
     View(Model model){
         super("WAR");
-        this.setSize(600, 600);
+        this.setSize(800, 500);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         nVpanel = new NavViewPanel();
         

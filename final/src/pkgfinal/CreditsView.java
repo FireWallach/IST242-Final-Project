@@ -5,6 +5,8 @@
  */
 package pkgfinal;
 
+import java.awt.Color;
+import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -16,6 +18,7 @@ public class CreditsView extends JPanel{
     private JLabel editor1;
     private JLabel editor2;
     private JLabel editor3;
+    
     CreditsView(){
         
         
@@ -25,6 +28,13 @@ public class CreditsView extends JPanel{
         add(editor2);
         editor3 = new JLabel("Stephen Kessler");
         add(editor3);
-        
+       
+    }
+    public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b){
+        if(optionsSet == true){
+            
+            
+            setBackground(c);
+        }
     }
 }
