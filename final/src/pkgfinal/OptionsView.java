@@ -47,7 +47,7 @@ public class OptionsView extends JPanel{
         this.o_model = o_model;
         optionsLabel = new JLabel("Choose Background Color:");
         add(optionsLabel);
-        GridLayout grid = new GridLayout(10,10);
+        GridLayout grid = new GridLayout(11,11);
         playerName1 = new JTextField("--Enter Player Name--");
         playerName2 = new JTextField("--Enter Player Name--");
         yesButton = new JRadioButton("Yes");
@@ -73,9 +73,9 @@ public class OptionsView extends JPanel{
 
         add(playerName1);
         add(playerName2);
+        add(rButtonLabel);
         add(yesButton);
         add(noButton);
-
         add(retButton);
         
         setLayout(grid);
