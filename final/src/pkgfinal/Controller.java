@@ -32,10 +32,9 @@ public class Controller {
     MainModel m_model;
     MainView m_view;
     MainController m_controller;
-    
-    InstructionsModel i_model;
+  
     InstructionsView i_view;
-    InstructionsController i_controller;
+    
     
     public Controller(Model model, View view ) {
         this.model = model;
@@ -49,9 +48,9 @@ public class Controller {
         m_view = new MainView(m_model);
         m_controller = new MainController(m_view, m_model);
         
-        i_model = new InstructionsModel();
-        i_view = new InstructionsView(i_model);
-        i_controller = new InstructionsController(i_model, i_view);
+        
+        i_view = new InstructionsView();
+        
                 
         view.addOptionsButtonListener(new OptionsButtonListener());
         view.addMainButtonListener(new MainButtonListener());        

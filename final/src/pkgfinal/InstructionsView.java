@@ -12,9 +12,9 @@ import javax.swing.JPanel;
  * @author Laura
  */
 public class InstructionsView extends JPanel{
-    private InstructionsModel i_model;
-    InstructionsView(InstructionsModel i_model){
-        this.i_model = i_model;
+    
+    InstructionsView(){
+        
     }
 }
 
