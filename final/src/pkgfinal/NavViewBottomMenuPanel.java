@@ -13,10 +13,10 @@ import javax.swing.JPanel;
  * @author daw5510
  */
 public class NavViewBottomMenuPanel extends JPanel{
-    JButton mainButton;
-    JButton optionsButton;
-    JButton instructionsButton;
-    JButton creditsButton;  
+    private JButton mainButton;
+    private JButton optionsButton;
+    private JButton instructionsButton;
+    private JButton creditsButton;  
     public NavViewBottomMenuPanel() {
         super();       
         mainButton = new JButton("Main");
@@ -28,5 +28,37 @@ public class NavViewBottomMenuPanel extends JPanel{
         add(optionsButton);
         add(instructionsButton);
         add(creditsButton);
+    }
+
+    public JButton getMainButton() {
+        return mainButton;
+    }
+
+    public void setMainButton(JButton mainButton) {
+        this.mainButton = mainButton;
+    }
+
+    public JButton getOptionsButton() {
+        return optionsButton;
+    }
+
+    public void setOptionsButton(JButton optionsButton) {
+        this.optionsButton = optionsButton;
+    }
+
+    public JButton getInstructionsButton() {
+        return instructionsButton;
+    }
+
+    public void setInstructionsButton(JButton instructionsButton) {
+        this.instructionsButton = instructionsButton;
+    }
+
+    public JButton getCreditsButton() {
+        return creditsButton;
+    }
+
+    public void setCreditsButton(JButton creditsButton) {
+        this.creditsButton = creditsButton;
     }
 }

@@ -15,9 +15,9 @@ import javax.swing.JPanel;
  * @author Laura
  */
 public class View extends JFrame{
-    Model model;
-    NavViewPanel nVpanel;
-    
+    private Model model;
+    private NavViewPanel nVpanel;
+   
     View(Model model){
         super("WAR");
         this.setSize(600, 600);
@@ -41,24 +41,25 @@ public class View extends JFrame{
     }
     
     
+    
     public void addOptionsButtonListener(ActionListener al) 
     {    
-        nVpanel.menu.optionsButton.addActionListener(al);
+        nVpanel.menu.getOptionsButton().addActionListener(al);
     }    
                     
     public void addMainButtonListener(ActionListener al) 
     {    
-        nVpanel.menu.mainButton.addActionListener(al);
+        nVpanel.menu.getMainButton().addActionListener(al);
     }       
     
     public void addInstructionsButtonListener(ActionListener al)
     {
-       nVpanel.menu.instructionsButton.addActionListener(al);
+       nVpanel.menu.getInstructionsButton().addActionListener(al);
     }  
     
     public void addCreditsButtonListener(ActionListener al)
     {        
-       nVpanel.menu.creditsButton.addActionListener(al);
+       nVpanel.menu.getCreditsButton().addActionListener(al);
     }
     
     //TODO: Add listeners to switch to other Panels

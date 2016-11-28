@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 public class NavViewPanel extends JPanel{
 
     NavViewBottomMenuPanel menu;
-    ViewSplashl splash;
+    ViewSplash splash;
     
     OptionsView o_view;
     MainView m_view;
@@ -30,7 +30,7 @@ public class NavViewPanel extends JPanel{
         super();
         setLayout(new BorderLayout());     
         menu = new NavViewBottomMenuPanel();
-        splash = new ViewSplashl();
+        splash = new ViewSplash();
         
         add(menu, BorderLayout.SOUTH);        
         add(splash, BorderLayout.CENTER);                        
