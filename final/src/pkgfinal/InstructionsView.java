@@ -32,7 +32,7 @@ public class InstructionsView extends JPanel{
         instructions2 = new JLabel("When a player clicks the next button, a card will draw which can range from 2 to ace.");
         add(instructions2);
         
-        instructions3 = new JLabel("Both players will draw cards to see you has a greater card.");
+        instructions3 = new JLabel("Both players will draw cards to see who has a greater card.");
         add(instructions3);
         
         instructions4 = new JLabel("If two players have a card with the same value, both will draw a card until there is a card greater than the other card in value.");
