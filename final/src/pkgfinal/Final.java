@@ -21,5 +21,5 @@ public class Final {
         Controller controller = new Controller(model, view);
         view.setVisible(true);
     }
-    
+   // https://commons.wikimedia.org/wiki/Category:Individual_playing_cards
 }
