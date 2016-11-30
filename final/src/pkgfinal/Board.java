@@ -21,4 +21,8 @@ public class Board {
     public Deck getDeck1(){
         return deck1;
     }
+    
+    public Deck getDeck2(){
+        return deck2;
+    }
 }
