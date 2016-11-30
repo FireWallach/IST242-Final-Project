@@ -37,6 +37,8 @@ public class InstructionsView extends JPanel{
         
         instructions4 = new JLabel("If two players have a card with the same value, both will draw a card until there is a card greater than the other card in value.");
         add(instructions4);
+        
+        setLayout(grid);
     }
     public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b){
         if(optionsSet == true){

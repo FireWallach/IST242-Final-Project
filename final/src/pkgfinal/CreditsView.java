@@ -21,6 +21,7 @@ public class CreditsView extends JPanel{
     
     CreditsView(){
         
+        GridLayout grid = new GridLayout(15,15);
         
         editor1 = new JLabel("Laura Rufo");
         add(editor1);
@@ -29,6 +30,7 @@ public class CreditsView extends JPanel{
         editor3 = new JLabel("Stephen Kessler");
         add(editor3);
        
+        setLayout(grid);
     }
     public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b){
         if(optionsSet == true){
