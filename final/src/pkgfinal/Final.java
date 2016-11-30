@@ -22,4 +22,5 @@ public class Final {
         view.setVisible(true);
     }
    // https://commons.wikimedia.org/wiki/Category:Individual_playing_cards
+   // http://whisperingimps.com/products/special_edition
 }
