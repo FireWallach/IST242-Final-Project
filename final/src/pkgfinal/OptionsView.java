@@ -12,6 +12,7 @@ package pkgfinal;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -25,7 +26,7 @@ import javax.swing.JTextField;
  *
  * @author jrimland-air
  */
-public class OptionsView extends JPanel{
+public abstract class OptionsView extends JPanel implements ActionListener{
     private JTextField playerName1;
     private JTextField playerName2;
     
@@ -51,7 +52,9 @@ public class OptionsView extends JPanel{
         playerName1 = new JTextField("--Name--");
         playerName2 = new JTextField("--Name--");
         yesButton = new JRadioButton("Yes");
+        yesButton.addActionListener(this);
         noButton = new JRadioButton("No");
+        noButton.addActionListener(this);
         group = new ButtonGroup();
         group.add(yesButton);
         group.add(noButton);
@@ -105,6 +108,8 @@ public class OptionsView extends JPanel{
         else
             return true;             
     }
+    
+     
     public JRadioButton getYesButton(){
         return yesButton;
     }
@@ -158,10 +163,26 @@ public class OptionsView extends JPanel{
     public void setBlueButton(JButton blueButton) {
         this.blueButton = blueButton;
     }
-
     
-    
-    
-    
+   
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(noButton.isSelected())
+            {
+                playerName1.setEnabled(false);
+                playerName1.setText(background);
+                playerName2.setEnabled(false);
+                playerName2.setText(background);
+            }
+            else
+            {
+                playerName1.setEnabled(true);
+                playerName2.setEnabled(true);
+            }
+        }      
+public String getEnable()    
+       {
+        return playerName2.getText() + playerName1.getText();
+       }
 }
 

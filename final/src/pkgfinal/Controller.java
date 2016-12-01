@@ -41,7 +41,7 @@ public class Controller {
         this.view = view;
         
         o_model = new OptionsModel();        
-        o_view = new OptionsView(o_model);
+        o_view = new OptionsView(o_model) {};
         o_Controller = new OptionsController(o_model, o_view, m_view); 
         
         m_model = new MainModel();
