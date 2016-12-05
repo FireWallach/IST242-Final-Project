@@ -29,7 +29,8 @@ public class MainView extends JPanel{
     private JLabel optionsLabel;
     private Color defaultBackground;
     private JPanel content;
-    
+    private JLabel cardImage1;
+    private JLabel cardImage2;
     
     private JLabel cardNameLabel;
     MainView(MainModel m_model)
@@ -52,7 +53,10 @@ public class MainView extends JPanel{
         
         cardNameLabel = new JLabel("Card");
         content.add(cardNameLabel, BorderLayout.CENTER);
-       
+        cardImage1 = new JLabel(new ImageIcon("src/images/CardBack.png"));
+        content.add(cardImage1);
+        cardImage2 = new JLabel(new ImageIcon("src/images/CardBack.png"));
+        content.add(cardImage2);
         add(content);
         add(menuLabel, BorderLayout.NORTH);
         
