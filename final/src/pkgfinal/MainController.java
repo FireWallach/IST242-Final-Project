@@ -33,6 +33,9 @@ public class MainController {
                     m_view.setField(m_model.getCardName());
                     
                 }
+                if(clickSource == m_view.getQuitButton()){
+                   System.exit(0);
+                }
             }
  
         }

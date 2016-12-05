@@ -97,6 +97,9 @@ public class MainView extends JPanel{
             else if(c.equals(Color.GREEN)){
                 m_model.setBackgroundName("Green");
             }
+//            player1 = "Player 1: ";
+//            
+//            player2 = " Player 2: ";
             
             optionsLabel.setText("Player 1: " + p1 + " Player 2: " + p2 + " Background Color: " +m_model.getBackgroundName() + " Show player names? " + optionsString);
         }
@@ -122,8 +125,7 @@ public class MainView extends JPanel{
     }
     public void addButtonListener(ActionListener al){
         nextTurnButton.addActionListener(al);
-        
-        
+        quitButton.addActionListener(al);
     }
 
 }
