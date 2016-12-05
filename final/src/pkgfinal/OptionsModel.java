@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 public class OptionsModel {
     private String playerName1;
     private String playerName2;
+    private String player1;
+    private String player2;
     private String background;
     private boolean displayNames;
     
@@ -46,6 +48,21 @@ public class OptionsModel {
         this.playerName2 = playerName2;
     }
     
+     public void setPlayer1(String player1) {
+        this.player1 = player1;
+    }
+     
+    public void setPlayer2(String player2) {
+        this.player2 = player2;
+    }
+    
+    public String getPlayer1(){
+        return player1;
+    }
+    
+     public String getPlayer2(){
+        return player2;
+    }
     
     public boolean getChanged(){
         return hasChanged;

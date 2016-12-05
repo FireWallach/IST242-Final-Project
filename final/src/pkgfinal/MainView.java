@@ -75,7 +75,7 @@ public class MainView extends JPanel{
     public void setField(String cardName){
         cardNameLabel.setText(cardName);
     }
-    public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b){
+    public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b, String player1, String player2){
         if(optionsSet == true){
             String optionsString;
             if(b == true)
@@ -97,11 +97,11 @@ public class MainView extends JPanel{
             else if(c.equals(Color.GREEN)){
                 m_model.setBackgroundName("Green");
             }
-//            player1 = "Player 1: ";
-//            
-//            player2 = " Player 2: ";
+           player1 = "Player 1: ";
+           
+           player2 = " Player 2: ";
             
-            optionsLabel.setText("Player 1: " + p1 + " Player 2: " + p2 + " Background Color: " +m_model.getBackgroundName() + " Show player names? " + optionsString);
+            optionsLabel.setText(player1 + p1 + player2 + p2 + " Background Color: " +m_model.getBackgroundName() + " Show player names? " + optionsString);
         }
         else{
             optionsLabel.setText("No options selected yet");
