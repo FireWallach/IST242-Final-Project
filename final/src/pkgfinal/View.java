@@ -18,6 +18,7 @@ public class View extends JFrame{
     private Model model;
     private NavViewPanel nVpanel;
     
+    
     View(Model model){
         super("WAR");
         this.setSize(800, 500);

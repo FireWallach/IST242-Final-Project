@@ -20,6 +20,7 @@ public class ViewSplash extends JPanel{
     
     ViewSplash(){
         
+        
         splashLabel = new JLabel(new ImageIcon("src/images/WarSplash.png"));
         add(splashLabel);
     

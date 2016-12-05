@@ -22,10 +22,6 @@ import javax.swing.JRadioButton;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 
-/**
- *
- * @author jrimland-air
- */
 public abstract class OptionsView extends JPanel implements ActionListener{
     private JTextField playerName1;
     private JTextField playerName2;

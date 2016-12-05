@@ -11,7 +11,7 @@ package pkgfinal;
  */
 public class MainModel {
     private String background;
-    
+    private String cardName;
    
     MainModel(){
          
@@ -22,6 +22,14 @@ public class MainModel {
     public String getBackgroundName(){
         
         return background;
+    }
+
+    public String getCardName() {
+        return cardName;
+    }
+
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
     }
     
     

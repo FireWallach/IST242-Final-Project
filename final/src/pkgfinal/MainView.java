@@ -10,19 +10,16 @@ package pkgfinal;
  * @author Laura
  */
 
-import java.awt.Color;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JSlider;
-import javax.swing.JTextField;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 
 /**
  *
  * @author jrimland-air
  */
 public class MainView extends JPanel{        
-    private JLabel MenuLabel;
+    private JLabel menuLabel;
     private JButton retButton;
     private MainModel m_model;
     private OptionsModel o_model;
@@ -31,28 +28,48 @@ public class MainView extends JPanel{
     private JButton quitButton;
     private JLabel optionsLabel;
     private Color defaultBackground;
+    private JPanel content;
+    
+    
+    private JLabel cardNameLabel;
     MainView(MainModel m_model)
     {
         this.m_model = m_model;
+        
+        content = new JPanel();
+        
         defaultBackground = getBackground();
 
+        setLayout(new BorderLayout());
 
-        MenuLabel = new JLabel("Welcome to the Main Menu!");
+        menuLabel = new JLabel("Welcome to the Main Menu!");
+    
         nextTurnButton = new JButton("Next");
         quitButton = new JButton("Quit");
         optionsLabel = new JLabel("No options selected yet");
-        // It may be useful to have a Save & Return button
+        
 
-        retButton = new JButton("Save and Return");
-
-        add(MenuLabel);
-        add(nextTurnButton);
-        add(quitButton);
-        add(optionsLabel);
-        add(retButton);               
+        
+        cardNameLabel = new JLabel("Card");
+        content.add(cardNameLabel, BorderLayout.CENTER);
+       
+        add(content);
+        add(menuLabel, BorderLayout.NORTH);
+        
+        add(nextTurnButton, BorderLayout.WEST);
+        add(quitButton, BorderLayout.EAST);
+        add(optionsLabel, BorderLayout.SOUTH);
+         
+        
+        
     }
+    
     public JButton getNextTurnButton() {
         return nextTurnButton;
+    }
+    
+    public void setField(String cardName){
+        cardNameLabel.setText(cardName);
     }
     public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b){
         if(optionsSet == true){
@@ -62,7 +79,7 @@ public class MainView extends JPanel{
             else
                 optionsString = "No";
             
-            
+            content.setBackground(c);
             setBackground(c);
             if(c.equals(Color.RED)){
                 m_model.setBackgroundName("Red");
@@ -84,7 +101,7 @@ public class MainView extends JPanel{
         }
     }
 
-    public void setNextTurnButton(){
+    public void setNextTurnButton(JButton nextTurnButton){
         this.nextTurnButton = nextTurnButton;
     }
     public JButton getQuitButton() {
@@ -99,5 +116,11 @@ public class MainView extends JPanel{
     public void setOptionsLabel(String pName1, String pName2) {
         optionsLabel.setText(o_model.getPlayerName1()+" "+o_model.getPlayerName2());
     }
+    public void addButtonListener(ActionListener al){
+        nextTurnButton.addActionListener(al);
+        
+        
+    }
+
 }
 

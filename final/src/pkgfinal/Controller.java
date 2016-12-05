@@ -95,6 +95,7 @@ public class Controller {
             m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames());
             view.switchToMainPanel(m_view);
             
+            
         }
     }         
     

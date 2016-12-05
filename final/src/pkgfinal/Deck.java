@@ -78,19 +78,23 @@ public class Deck {
         }
     }
     public Card drawCard(){
-        Card retCard = cardList.get(0);
-        cardList.remove(0);
+        Card retCard = getCardList().get(0);
+        getCardList().remove(0);
         return retCard;
     }
     public ArrayList<Card> getCardList(){
         return cardList;
     }
     public Card getCard(int index){
-        return cardList.get(index);
+        return getCardList().get(index);
     }
     public void displayDeck(){
-        for(int i = 0; i < cardList.size(); i++){
-            System.out.println(cardList.get(i).getName());
+        for(int i = 0; i < getCardList().size(); i++){
+            System.out.println(getCardList().get(i).getName());
         }
+    }
+
+    public void setCardList(ArrayList<Card> cardList) {
+        this.cardList = cardList;
     }
 }
