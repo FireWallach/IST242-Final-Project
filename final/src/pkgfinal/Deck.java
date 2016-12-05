@@ -97,4 +97,7 @@ public class Deck {
     public void setCardList(ArrayList<Card> cardList) {
         this.cardList = cardList;
     }
+    public void addCard(Card card){
+        cardList.add(card);
+    }
 }

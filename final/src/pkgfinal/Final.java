@@ -22,6 +22,7 @@ public class Final {
         view.setVisible(true);
         Board board = new Board();
         board.shuffle();
+        
     }
    // https://commons.wikimedia.org/wiki/Category:Individual_playing_cards
    // http://whisperingimps.com/products/special_edition

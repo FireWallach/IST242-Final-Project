@@ -51,12 +51,40 @@ public class Board {
         inPlay2 = deck2.drawCard();
     }
     public int whoWon(){ //Determines which card is greater in value of the inPlay cards.
-        if(inPlay1.getVal() > inPlay2.getVal()){
+        if(getInPlay1().getVal() > getInPlay2().getVal()){
             return 1;
         }
-        else if( inPlay1.getVal() < inPlay2.getVal()){
+        else if( getInPlay1().getVal() < getInPlay2().getVal()){
             return 2;
         }
         else return 3; // this means war
+    }
+    
+    public void replaceCardsNoWar(int i){
+        if(i == 1){
+            deck1.addCard(inPlay1);
+            deck2.addCard(inPlay2);
+        }
+        else
+        {
+            deck2.addCard(inPlay1);
+            deck2.addCard(inPlay2);
+        }
+        inPlay1 = null;
+        inPlay2 = null;
+    }
+
+    /**
+     * @return the inPlay1
+     */
+    public Card getInPlay1() {
+        return inPlay1;
+    }
+
+    /**
+     * @return the inPlay2
+     */
+    public Card getInPlay2() {
+        return inPlay2;
     }
 }
