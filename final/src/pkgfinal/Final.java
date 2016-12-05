@@ -20,6 +20,9 @@ public class Final {
         View view = new View(model);
         Controller controller = new Controller(model, view);
         view.setVisible(true);
+        Board board = new Board();
+        board.shuffle();
+        board.printDecks();
     }
    // https://commons.wikimedia.org/wiki/Category:Individual_playing_cards
    // http://whisperingimps.com/products/special_edition
