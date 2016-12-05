@@ -22,7 +22,18 @@ public class Final {
         view.setVisible(true);
         Board board = new Board();
         board.shuffle();
-        
+        while(board.hasCards()){
+            board.draw();
+            if((board.whoWon() == 1) || (board.whoWon() == 2)){
+                board.replaceCardsNoWar(board.whoWon());
+            }
+            else if(board.whoWon() == 3){
+                //EXECUTE WAR
+            }
+            else{
+                System.out.println("SOMETHING WENT WRONG");
+            }
+        }
     }
    // https://commons.wikimedia.org/wiki/Category:Individual_playing_cards
    // http://whisperingimps.com/products/special_edition

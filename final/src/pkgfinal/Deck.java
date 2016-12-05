@@ -100,4 +100,7 @@ public class Deck {
     public void addCard(Card card){
         cardList.add(card);
     }
+    public boolean hasCards(){
+        return !(cardList.isEmpty());
+    }
 }

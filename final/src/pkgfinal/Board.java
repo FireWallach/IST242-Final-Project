@@ -87,4 +87,7 @@ public class Board {
     public Card getInPlay2() {
         return inPlay2;
     }
+    public boolean hasCards(){
+        return (deck1.hasCards() && deck2.hasCards());
+    }
 }
