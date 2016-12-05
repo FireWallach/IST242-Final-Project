@@ -29,13 +29,25 @@ public class MainController {
                 
                 
                 if(clickSource == m_view.getNextTurnButton()){
-                    board.draw();
-                    //display card located in board.inPlay 1 or 2
-                    //provided war did not occur:
-                    //change winner label to board.whoWon()
-                    //update card count with board.cardsleft(1 or 2)
-                    //provided war did not occur:
-                    board.replaceCardsNoWar(board.whoWon());
+                    //if(board.hasCards()){
+                        //board.draw();
+                        //if(board.whoWon() != 3){
+                            //display cards [board.getInPlay1() and board.getInPlay2()]
+                            //display winner [board.whoWon()]
+                            //board.replaceCardsNoWar(board.whoWon());
+                        //}
+                        //else{
+                            //fill winPool
+                            //pull another card
+                            //display new cards in play
+                            //display winner
+                            //return pool to winner
+                        //}
+                    //}
+                    //else{
+                        //End game
+                    //}
+                        
                     m_model.setCardName("the best card");
                     m_view.setField(m_model.getCardName());
                     
