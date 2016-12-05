@@ -11,9 +11,12 @@ import java.util.ArrayList;
  *
  * @author daw5510
  */
+
 public class Deck {
     private ArrayList<Card> cardList;
-    
+    Deck(){
+        cardList = new ArrayList<Card>();
+    }
     Deck(int series){
         if(series == 1){
             cardList = new ArrayList<Card>();
@@ -74,8 +77,10 @@ public class Deck {
             cardList.add(new Card("King of Diamonds", 13, "Diamonds"));
         }
     }
-    public Card getTopCard(){
-        return cardList.get(0);
+    public Card drawCard(){
+        Card retCard = cardList.get(0);
+        cardList.remove(0);
+        return retCard;
     }
     public ArrayList<Card> getCardList(){
         return cardList;
