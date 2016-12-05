@@ -20,6 +20,7 @@ public class Controller {
     
     private Model model;
     private View view;
+    private Board board;
     
     //Instance Variables for Options Model, View, and Controller
     private OptionsModel o_model;
@@ -39,6 +40,7 @@ public class Controller {
     public Controller(Model model, View view ) {
         this.model = model;
         this.view = view;
+        this.board = new Board();
         
         o_model = new OptionsModel();        
         o_view = new OptionsView(o_model) {};
@@ -46,7 +48,7 @@ public class Controller {
         
         m_model = new MainModel();
         m_view = new MainView(m_model);
-        m_controller = new MainController(m_view, m_model);
+        m_controller = new MainController(m_view, m_model, board);
         
         
         i_view = new InstructionsView();
