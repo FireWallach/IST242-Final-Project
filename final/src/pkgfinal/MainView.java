@@ -14,10 +14,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-/**
- *
- * @author jrimland-air
- */
+
 public class MainView extends JPanel{        
     private JLabel menuLabel;
     

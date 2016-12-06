@@ -5,8 +5,9 @@
  */
 package pkgfinal;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
+
+import javax.swing.*;
+
 
 /**
  *

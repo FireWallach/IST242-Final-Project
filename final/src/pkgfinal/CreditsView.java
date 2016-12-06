@@ -5,15 +5,10 @@
  */
 package pkgfinal;
 
-import java.awt.Color;
-import java.awt.GridLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 
-/**
- *
- * @author Laura
- */
 public class CreditsView extends JPanel{
     private JLabel editor1;
     private JLabel editor2;

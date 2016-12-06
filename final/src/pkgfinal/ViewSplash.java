@@ -5,10 +5,9 @@
  */
 package pkgfinal;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 
 /**
  *
