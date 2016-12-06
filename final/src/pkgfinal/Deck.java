@@ -110,4 +110,7 @@ public class Deck {
             return false;
         }
     }
+    public int size(){
+        return cardList.size();
+    }
 }

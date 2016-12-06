@@ -18,13 +18,13 @@ public class Board {
     private Card inPlay1; //Card currently in play for player 1
     private Card inPlay2; //Card currently in play for player 2
     private ArrayList<Card> winPool; //Most recent war's card pool.
-    int warCount;
+    private boolean warLastTurn;
     
     Board(){
         deck1 = new Deck(1);
         deck2 = new Deck(2);
         winPool = new ArrayList<Card>();
-        warCount = 0;
+        boolean warLastTurn = false;
     }
     
     public Deck getDeck1(){
@@ -93,18 +93,13 @@ public class Board {
             case 1:
                 deck1.addCard(inPlay1);
                 deck1.addCard(inPlay2);
-                inPlay1 = null;
-                inPlay2 = null;
                 break;
             case 2:
                 deck2.addCard(inPlay1);
                 deck2.addCard(inPlay2);
-                inPlay1 = null;
-                inPlay2 = null;
                 break;
             case 3:
                 executeWar();
-                warCount++;
                 break;
             default:
                 System.out.println("SOMETHING WENT WRONG");
@@ -121,32 +116,48 @@ public class Board {
         return inPlay2;
     }
     
+    public void wipeWinPool(){
+        getWinPool().clear();
+        warLastTurn = false;
+        return;
+    }
+    
     public void executeWar(){
-        winPool.add(inPlay1);
-        winPool.add(inPlay2);
+        getWinPool().add(inPlay1);
+        getWinPool().add(inPlay2);
         for(int i = 0; i < 3; i++){
             if(!decksEmpty()){
-                winPool.add(deck1.getTopCard());
+                getWinPool().add(deck1.getTopCard());
                 deck1.deleteTopCard();
-                winPool.add(deck2.getTopCard());
+                getWinPool().add(deck2.getTopCard());
                 deck2.deleteTopCard();
             }
         }
-        if(!decksEmpty())
-            refill();
+        if(!decksEmpty()){
+            inPlay1 = deck1.getTopCard();
+            inPlay2 = deck2.getTopCard();
+        }
         if(roundWinner() == 1){
-            for(int i = 0; i < winPool.size(); i ++)
+            for(int i = 0; i < getWinPool().size(); i ++)
             {
-                deck1.addCard(winPool.get(i));
+                deck1.addCard(getWinPool().get(i));
             }
         }
         else{
-            for(int i = 0; i < winPool.size(); i ++)
+            for(int i = 0; i < getWinPool().size(); i ++)
             {
-                deck2.addCard(winPool.get(i));
+                deck2.addCard(getWinPool().get(i));
             }
         }
-        winPool.clear();
+        warLastTurn = true;
     }
-    
+
+
+    public boolean isWarLastTurn() {
+        return warLastTurn;
+    }
+
+    public ArrayList<Card> getWinPool() {
+        return winPool;
+    }
 }
