@@ -76,11 +76,17 @@ public class Deck {
             cardList.add(new Card("Queen of Diamonds", 12, "Diamonds"));
             cardList.add(new Card("King of Diamonds", 13, "Diamonds"));
         }
+        else{
+            cardList = new ArrayList<Card>();
+        }
     }
-    public Card drawCard(){
-        Card retCard = getCardList().get(0);
-        getCardList().remove(0);
+    public Card getTopCard(){
+        Card retCard = cardList.get(0);
+
         return retCard;
+    }
+    public void deleteTopCard(){
+        cardList.remove(0);
     }
     public ArrayList<Card> getCardList(){
         return cardList;
@@ -93,14 +99,15 @@ public class Deck {
             System.out.println(getCardList().get(i).getName());
         }
     }
-
-    public void setCardList(ArrayList<Card> cardList) {
-        this.cardList = cardList;
+    public void addCard(Card e){
+        cardList.add(e);
     }
-    public void addCard(Card card){
-        cardList.add(card);
-    }
-    public boolean hasCards(){
-        return !(cardList.isEmpty());
+    public boolean isEmpty(){
+        if(cardList.size()  == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

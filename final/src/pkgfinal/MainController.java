@@ -32,20 +32,20 @@ public class MainController {
                     //if(board.hasCards()){
                         //board.draw();
                         //if(board.whoWon() != 3){
-                            //display cards [board.getInPlay1() and board.getInPlay2()]
-                            //display winner [board.whoWon()]
+                            //LAURA: display cards [board.getInPlay1() and board.getInPlay2()]
+                            //LAURA: display winner [board.whoWon()]
                             //board.replaceCardsNoWar(board.whoWon());
                         //}
                         //else{
-                            //fill winPool
-                            //pull another card
-                            //display new cards in play
-                            //display winner
-                            //return pool to winner
+                            //DYLAN: fill winPool
+                            //DYLAN: pull another card
+                            //LAURA: display new cards in play
+                            //LAURA: display winner
+                            //DYLAN: return pool to winner
                         //}
                     //}
                     //else{
-                        //End game
+                        //LAURA: End game
                     //}
                         
                     m_model.setCardName("the best card");
