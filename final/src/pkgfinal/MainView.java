@@ -20,7 +20,7 @@ import java.awt.event.*;
  */
 public class MainView extends JPanel{        
     private JLabel menuLabel;
-    private JButton retButton;
+    
     private MainModel m_model;
     private OptionsModel o_model;
     private OptionsView o_view;
@@ -29,10 +29,14 @@ public class MainView extends JPanel{
     private JLabel optionsLabel;
     private Color defaultBackground;
     private JPanel content;
-    private JLabel cardImage1;
-    private JLabel cardImage2;
+    private JLabel player1CardImage;
+    private ImageIcon card2;
+   
+    private ImageIcon card1;
+    private JLabel player2CardImage;
+    private JLabel cardNameLabel1;
+    private JLabel cardNameLabel2;
     
-    private JLabel cardNameLabel;
     MainView(MainModel m_model)
     {
         this.m_model = m_model;
@@ -44,19 +48,29 @@ public class MainView extends JPanel{
         setLayout(new BorderLayout());
 
         menuLabel = new JLabel("Welcome to the Main Menu!");
-    
+        
         nextTurnButton = new JButton("Next");
         quitButton = new JButton("Quit");
         optionsLabel = new JLabel("No options selected yet");
         
 
         
-        cardNameLabel = new JLabel("Card");
-        content.add(cardNameLabel, BorderLayout.CENTER);
-        cardImage1 = new JLabel(new ImageIcon("src/images/CardBack.png"));
-        content.add(cardImage1);
-        cardImage2 = new JLabel(new ImageIcon("src/images/CardBack.png"));
-        content.add(cardImage2);
+        cardNameLabel1 = new JLabel("Card");
+        card1 = new ImageIcon("src/images/cardBack.png");
+        cardNameLabel2 = new JLabel("card");
+        
+        player1CardImage = new JLabel(getCard1());
+        
+        card2= new ImageIcon("src/images/cardBack.png");
+        
+        
+        player2CardImage = new JLabel(getCard2());
+        content.add(player1CardImage);
+        
+        content.add(cardNameLabel1);
+        content.add(player2CardImage);
+        content.add(cardNameLabel2);
+        
         add(content);
         add(menuLabel, BorderLayout.NORTH);
         
@@ -72,10 +86,13 @@ public class MainView extends JPanel{
         return nextTurnButton;
     }
     
-    public void setField(String cardName){
-        cardNameLabel.setText(cardName);
+    public void setField(String cardName1,String cardName2, ImageIcon image1, ImageIcon image2){
+        cardNameLabel1.setText(cardName1);
+        cardNameLabel2.setText(cardName2);
+        player1CardImage.setIcon(image1);
+        player2CardImage.setIcon(image2);
     }
-    public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b, String player1, String player2){
+    public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b){
         if(optionsSet == true){
             String optionsString;
             if(b == true)
@@ -97,11 +114,8 @@ public class MainView extends JPanel{
             else if(c.equals(Color.GREEN)){
                 m_model.setBackgroundName("Green");
             }
-           player1 = "Player 1: ";
-           
-           player2 = " Player 2: ";
             
-            optionsLabel.setText(player1 + p1 + player2 + p2 + " Background Color: " +m_model.getBackgroundName() + " Show player names? " + optionsString);
+            optionsLabel.setText("Player 1: " + p1 + " Player 2: " + p2 + " Background Color: " +m_model.getBackgroundName() + " Show player names? " + optionsString);
         }
         else{
             optionsLabel.setText("No options selected yet");
@@ -126,7 +140,26 @@ public class MainView extends JPanel{
     public void addButtonListener(ActionListener al){
         nextTurnButton.addActionListener(al);
         quitButton.addActionListener(al);
+        
     }
 
+    public ImageIcon getCard1() {
+        return card1;
+    }
+
+    public void setCard1(ImageIcon card1) {
+        this.card1 = card1;
+    }
+
+    public ImageIcon getCard2() {
+        
+        return card2;
+    }
+
+    public void setCard2(ImageIcon card2) {
+        this.card2 = card2;
+        
+    }
+    
 }
 

@@ -94,7 +94,7 @@ public class Controller {
         public void actionPerformed(ActionEvent e)
         {            
             //Pass a Main View object to our Navigation View
-            m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames(), o_model.getPlayer1(), o_model.getPlayer2());
+            m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames());
             view.switchToMainPanel(m_view);
             
         }
