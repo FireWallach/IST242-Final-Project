@@ -553,13 +553,14 @@ public class MainController {
                                 gameWinner.setText("Player 2 has won with " + m_model.getDeckSize2() + " cards vs. Player 2 with " +  m_model.getDeckSize1() + "cards on turn "+ turn);
                                 break;
                             case 3:
-                                m_model.setGameTie("Both players tied with 26 vs. 26 at turn 30");
+                                gameWinner.setText("Both players tied with 26 vs. 26 at turn 30");
                                 break;
                             default:
                                 break;
                         }
                         
                         winnerPanel.add(gameWinner);
+                        
                         winnerPanel.add(quitGame);
                     }
                     m_view.setField(m_model.getCardName1(),m_model.getCardName2(), m_model.getCardImage1(), m_model.getCardImage2(), m_model.getWinnerName(), m_model.getWarString());

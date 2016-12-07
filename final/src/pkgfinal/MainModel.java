@@ -21,7 +21,7 @@ public class MainModel {
     private ImageIcon cardImage2;
     private String winnerName;
     private String warString;
-    private String gameTie;
+   
     private int deckSize1;
     private int deckSize2;
     MainModel(){
@@ -83,13 +83,7 @@ public class MainModel {
         this.warString = warString;
     }
 
-    public String getGameTie() {
-        return gameTie;
-    }
-
-    public void setGameTie(String gameTie) {
-        this.gameTie = gameTie;
-    }
+   
 
     public int getDeckSize1() {
         return deckSize1;
