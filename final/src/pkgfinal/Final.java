@@ -17,14 +17,14 @@ public class Final {
     public static void main(String[] args) {
         int turns = 0;
         // TODO code application logic here
-        Model model = new Model();
-        View view = new View(model);
-        Controller controller = new Controller(model, view);
+        
+        View view = new View();
+        Controller controller = new Controller(view);
         view.setVisible(true);
 
     }
     
-    // Links to where card images came from.
+   // Links to where card images came from.
    // https://commons.wikimedia.org/wiki/Category:Individual_playing_cards
    // http://whisperingimps.com/products/special_edition
 }

@@ -14,11 +14,11 @@ import java.awt.event.*;
  * @author Laura
  */
 public class View extends JFrame{
-    private Model model;
+    
     private NavViewPanel nVpanel;
     
     
-    View(Model model){
+    View(){
         super("WAR");
         this.setSize(1000, 500);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -87,7 +87,7 @@ public class View extends JFrame{
        nVpanel.getMenu().getCreditsButton().addActionListener(al);
     }
     
-    //TODO: Add listeners to switch to other Panels
+ 
    
     
 }

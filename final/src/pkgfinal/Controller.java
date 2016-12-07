@@ -17,7 +17,7 @@ import java.awt.event.*;
 
 public class Controller {
     
-    private Model model;
+    
     private View view;
     private Board board;
     
@@ -36,8 +36,8 @@ public class Controller {
     private CreditsView c_view;
     
     
-    public Controller(Model model, View view ) {
-        this.model = model;
+    public Controller(View view ) {
+        
         this.view = view;
         this.board = new Board();
         
@@ -82,8 +82,7 @@ public class Controller {
     class OptionsButtonListener implements ActionListener {            
         @Override
         public void actionPerformed(ActionEvent e)
-        {            
-            //Pass an Options View object to our Navigation View
+        {                 
                 view.switchToOptionsPanel(o_view);        
         }
     }     
@@ -92,7 +91,6 @@ public class Controller {
         @Override
         public void actionPerformed(ActionEvent e)
         {            
-            //Pass a Main View object to our Navigation View
             m_view.setOptions(o_model.getChanged(),o_model.getPlayerName1(), o_model.getPlayerName2(), o_view.getBackground(), o_model.getDisplayNames());
             view.switchToMainPanel(m_view);
             

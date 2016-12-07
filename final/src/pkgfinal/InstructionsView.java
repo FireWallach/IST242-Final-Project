@@ -45,8 +45,6 @@ public class InstructionsView extends JPanel{
     }
     public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b){
         if(optionsSet == true){
-            
-            
             setBackground(c);
         }
     }

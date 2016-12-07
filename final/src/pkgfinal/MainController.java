@@ -499,7 +499,6 @@ public class MainController {
                                 m_model.setCardImage2(new ImageIcon("src/images/cardBack.png"));
                                 break;   
                         }
-                        
 
                         board.refill();
                         //Show round winner in view. This can be found at board.roundWinner().
@@ -519,7 +518,7 @@ public class MainController {
                             }
                             
                             for(int i = 0; i<board.getWinPool().size();i++){
-                                System.out.println(board.getWinPool().get(i).getName());
+                                
                                 cardsWon += board.getWinPool().get(i).getName() + " ";
                                 m_model.setWarString("Winner got: " + cardsWon);
                             }
