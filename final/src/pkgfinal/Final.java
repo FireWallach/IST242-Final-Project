@@ -21,19 +21,10 @@ public class Final {
         View view = new View(model);
         Controller controller = new Controller(model, view);
         view.setVisible(true);
-//        Board board = new Board();
-//        board.shuffle();
-//        while((turns < 30) && !(board.decksEmpty())){
-//            turns++;
-//            board.putInPlay();
-//            board.refill();
-//            board.wipeWinPool();
-//        }
-//                board.printDecks();
-//        System.out.println("Cards: " + (board.getDeck1().getCardList().size() + board.getDeck2().getCardList().size()));
-//
-//        System.out.println("Player " + board.whoWon() + " won with: " + board.getDeck1().getCardList().size() + " vs. " + board.getDeck2().getCardList().size() + " on turn " + turns);
+
     }
+    
+    // Links to where card images came from.
    // https://commons.wikimedia.org/wiki/Category:Individual_playing_cards
    // http://whisperingimps.com/products/special_edition
 }

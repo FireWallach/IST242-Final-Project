@@ -20,6 +20,7 @@ public class InstructionsView extends JPanel{
     private JLabel instructions2;
     private JLabel instructions3;
     private JLabel instructions4;
+    private JLabel instructions5;
     
     InstructionsView(){
         
@@ -36,6 +37,9 @@ public class InstructionsView extends JPanel{
         
         instructions4 = new JLabel("If two players have a card with the same value, both will draw a card until there is a card greater than the other card in value.");
         add(instructions4);
+        
+        instructions5 = new JLabel("Game will end at thirty turns. Game will determine who has the most cards.");
+          add(instructions5);
         
         setLayout(grid);
     }
