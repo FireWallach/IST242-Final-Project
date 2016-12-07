@@ -18,7 +18,7 @@ public class NavViewPanel extends JPanel{
 
     private NavViewBottomMenuPanel menu;
     private ViewSplash splash;
-    
+   
     private OptionsView o_view;
     private MainView m_view;
     private InstructionsView i_view;
@@ -29,7 +29,7 @@ public class NavViewPanel extends JPanel{
         setLayout(new BorderLayout());     
         menu = new NavViewBottomMenuPanel();
         splash = new ViewSplash();
-        
+
         add(menu, BorderLayout.SOUTH);        
         add(splash, BorderLayout.CENTER);                        
     }
@@ -73,7 +73,8 @@ public class NavViewPanel extends JPanel{
         revalidate();
         repaint();
     }
-    
+ 
+
     public void removeCredits()
     {
         if(this.c_view != null)
@@ -97,11 +98,12 @@ public class NavViewPanel extends JPanel{
         if (this.m_view != null)
             remove(this.m_view);
     }   
-
+    
     public void removeSplash()
     {
         remove(splash);
     }
+    
 
     /**
      * @return the menu

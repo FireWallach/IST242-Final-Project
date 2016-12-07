@@ -33,41 +33,42 @@ public class MainView extends JPanel{
     private JLabel player2CardImage;
     private JLabel cardNameLabel1;
     private JLabel cardNameLabel2;
+    private JLabel roundWinner;
+    private JLabel warLabel;
+
     
     MainView(MainModel m_model)
     {
         this.m_model = m_model;
         
         content = new JPanel();
-        
         defaultBackground = getBackground();
-
         setLayout(new BorderLayout());
 
         menuLabel = new JLabel("Welcome to the Main Menu!");
-        
         nextTurnButton = new JButton("Next");
         quitButton = new JButton("Quit");
         optionsLabel = new JLabel("No options selected yet");
         
-
-        
-        cardNameLabel1 = new JLabel("Card");
+        //content panel
+        cardNameLabel1 = new JLabel();
         card1 = new ImageIcon("src/images/cardBack.png");
-        cardNameLabel2 = new JLabel("card");
-        
+        cardNameLabel2 = new JLabel();
         player1CardImage = new JLabel(getCard1());
-        
         card2= new ImageIcon("src/images/cardBack.png");
-        
-        
         player2CardImage = new JLabel(getCard2());
-        content.add(player1CardImage);
-        
+        roundWinner = new JLabel();
+        warLabel = new JLabel();
+       
         content.add(cardNameLabel1);
+        content.add(player1CardImage);
         content.add(player2CardImage);
         content.add(cardNameLabel2);
         
+        content.add(roundWinner);
+    
+        content.add(warLabel);
+
         add(content);
         add(menuLabel, BorderLayout.NORTH);
         
@@ -83,11 +84,13 @@ public class MainView extends JPanel{
         return nextTurnButton;
     }
     
-    public void setField(String cardName1,String cardName2, ImageIcon image1, ImageIcon image2){
+    public void setField(String cardName1,String cardName2, ImageIcon image1, ImageIcon image2, String winner, String war){
         cardNameLabel1.setText(cardName1);
         cardNameLabel2.setText(cardName2);
         player1CardImage.setIcon(image1);
         player2CardImage.setIcon(image2);
+        roundWinner.setText(winner);
+        warLabel.setText(war);
     }
     public void setOptions(boolean optionsSet, String p1, String p2, Color c, boolean b){
         if(optionsSet == true){
@@ -97,7 +100,7 @@ public class MainView extends JPanel{
             else
                 optionsString = "No";
             
-            content.setBackground(c);
+            getContent().setBackground(c);
             setBackground(c);
             if(c.equals(Color.RED)){
                 m_model.setBackgroundName("Red");
@@ -157,6 +160,29 @@ public class MainView extends JPanel{
         this.card2 = card2;
         
     }
-    
+
+    public JLabel getRoundWinner() {
+        return roundWinner;
+    }
+
+    public void setRoundWinner(JLabel roundWinner) {
+        this.roundWinner = roundWinner;
+    }
+
+    public JLabel getWarLabel() {
+        return warLabel;
+    }
+
+    public void setWarLabel(JLabel warLabel) {
+        this.warLabel = warLabel;
+    }
+
+    public JPanel getContent() {
+        return content;
+    }
+
+    public void setContent(JPanel content) {
+        this.content = content;
+    }
 }
 

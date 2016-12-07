@@ -20,12 +20,14 @@ public class View extends JFrame{
     
     View(Model model){
         super("WAR");
-        this.setSize(800, 500);
+        this.setSize(1000, 500);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         nVpanel = new NavViewPanel();
         
         add(nVpanel); 
     }
+ 
+    
     public void switchToCreditsPanel(CreditsView c_view)
     {
         nVpanel.removeSplash();
